@@ -14,24 +14,7 @@ public class Dictionary {
     "shift","scene","worth","final","faint","occur","blind","sheet","crush","relax","label","expel","event","limit","argue","sharp","curse","image","guide","expel",
     "quake","clout","query","squad","vouch","siege","naive","inept","quirk","glory","irony","chief","motto","glyph");
 
-    public List<String> getWordList() {
-        return wordList;
-    }
-
-    public void addWordToWordList(String word){
-        if (!wordList.contains(word) && word.matches("[a-zA-Z]+") && word.length() == 5) {
-            wordList.add(word);
-        }
-    }
-
-    public void removeWordFromWordList(String word){
-        if (wordList.contains(word)) {
-            wordList.remove(word);
-        }
-    }
-
     public boolean contains(String guess) {
-        //check if guess is in word list
         if (wordList.contains(guess)) {
             return true;
         } else { 
