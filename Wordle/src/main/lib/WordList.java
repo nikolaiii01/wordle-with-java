@@ -3,7 +3,7 @@ package main.lib;
 import java.util.Arrays;
 import java.util.List;
 
-public class WordList {
+public class Dictionary {
     List<String> wordList = Arrays.asList("tough","cough","spank","blank","stink","stank","study","blame","flame","flank","state","stare","cloud","pinky","blink",
     "alert","resin","shade","night","light","right","haunt","taunt","ghost","toast","boast","roast","react","alone","arise","about","tears","teach","reach","slump",
     "slaps","slate","slant","slang","slain","later","tired","glare","glade","false","flask","flair","flaws","stats","clamp","clank","kneel","knead","xerox","piano",
@@ -16,10 +16,6 @@ public class WordList {
 
     public List<String> getWordList() {
         return wordList;
-    }
-    
-    public void setWordList(List<String> wordList) {
-        this.wordList = wordList;
     }
 
     public void addWordToWordList(String word){

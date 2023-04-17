@@ -37,9 +37,9 @@ public class App {
             } else {
                 flag = checker.compareGuessAndWord(guess, word);
                 if(flag==1) break;
-                tries--;
                 System.out.println();
                 System.out.println("You have " + tries + " tries left.");
+                tries--;
             }
         }
         scan.close();

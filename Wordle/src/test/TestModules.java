@@ -45,6 +45,6 @@ public class TestModules {
     public void testContains() {
         WordList wordList = new WordList();
         assertTrue(wordList.contains("ghost"));
-        assertFalse(wordList.contains("nonexistent"));
+        assertFalse(wordList.contains("adieu"));
     }
 }
