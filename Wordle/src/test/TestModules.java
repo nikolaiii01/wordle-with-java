@@ -48,9 +48,31 @@ public class TestModules {
     }
 
     @Test
-    //Another test for contains() method
     public void testDictionaryDoesNotContainAdieu() {
         Dictionary dictionary = new Dictionary();
         assertFalse(dictionary.contains("adieu"));
+    }
+
+    @Test
+    public void testDictionaryDoesNotContainEmptyString() {
+        Dictionary dictionary = new Dictionary();
+        assertFalse(dictionary.contains(""));
+    }
+
+    @Test
+    public void testDictionaryDoesNotContainNull() {
+        Dictionary dictionary = new Dictionary();
+        assertFalse(dictionary.contains(null));
+    }
+    
+    @Test
+    public void testDictionaryDoesNotContainDuplicateWords() {
+        Dictionary dictionary = new Dictionary();
+        String[] words = dictionary.getWords();
+        for(int i = 0; i < words.length; i++) {
+            for(int j = i + 1; j < words.length; j++) {
+                assertFalse(words[i].equals(words[j]));
+            }
+        }
     }
 }
