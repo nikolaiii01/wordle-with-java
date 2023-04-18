@@ -75,4 +75,64 @@ public class TestModules {
             }
         }
     }
+
+    @Test
+    public void testDictionaryContainsOnly5LetterWords() {
+        Dictionary dictionary = new Dictionary();
+        String[] words = dictionary.getWords();
+        for(int i = 0; i < words.length; i++) {
+            assertTrue(words[i].length() == 5);
+        }
+    }
+
+    @Test
+    public void testDictionaryDoesNotContainNumberStrings() {
+        Dictionary dictionary = new Dictionary();
+        String[] words = dictionary.getWords();
+        for(int i = 0; i < words.length; i++) {
+            assertFalse(words[i].matches(".*\\d.*"));
+        }
+    }
+
+    @Test
+    public void testDictionaryDoesNotContainSpecialCharacters() {
+        Dictionary dictionary = new Dictionary();
+        String[] words = dictionary.getWords();
+        for(int i = 0; i < words.length; i++) {
+            assertFalse(words[i].matches(".*\\W.*"));
+        }
+    }
+
+    @Test
+    public void testDictionaryDoesNotContainUppercaseLetters() {
+        Dictionary dictionary = new Dictionary();
+        String[] words = dictionary.getWords();
+        for(int i = 0; i < words.length; i++) {
+            assertFalse(words[i].matches(".*[A-Z].*"));
+        }
+    }
+
+    @Test
+    public void testWordIsUsedAsAGuessAlready() {
+        Dictionary dictionary = new Dictionary();
+        String[] guesses = new String[6];
+        guesses[0] = "haunt";
+        guesses[1] = "taunt";
+        guesses[2] = "stare";
+        guesses[3] = "cloud";
+        guesses[4] = "pinky";
+        assertTrue(dictionary.isWordGuessed("haunt", guesses));
+    }
+
+    @Test
+    public void testWordIsNotYetUsedAsAGuess() {
+        Dictionary dictionary = new Dictionary();
+        String[] guesses = new String[6];
+        guesses[0] = "haunt";
+        guesses[1] = "taunt";
+        guesses[2] = "stare";
+        guesses[3] = "cloud";
+        guesses[4] = "pinky";
+        assertFalse(dictionary.isWordGuessed("brave", guesses));
+    }
 }

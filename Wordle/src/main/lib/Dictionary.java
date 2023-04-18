@@ -27,4 +27,13 @@ public class Dictionary {
     public String[] getWords() {
         return wordList.toArray(new String[0]);
     }
+
+    public boolean isWordGuessed(String word, String[] guessedWords) {
+        for (int i = 0; i < guessedWords.length; i++) {
+            if (guessedWords[i] != null && guessedWords[i].equals(word)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
