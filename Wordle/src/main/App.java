@@ -1,11 +1,10 @@
 package main;
 
 import main.lib.GuessChecker;
-import main.lib.WordList;
+import main.lib.Dictionary;
 
 import java.util.Scanner;
 
-//Wordle app
 public class App {
     static int flag = 0;
     public static void main(String[] args) {
@@ -17,10 +16,10 @@ public class App {
         System.out.println("Good luck!");
         System.out.println();
       
-        WordList words = new WordList();
+        Dictionary dictionary = new Dictionary();
         GuessChecker checker = new GuessChecker();
 
-        String word = words.getRandomWord();
+        String word = dictionary.getRandomWord();
 
         Scanner scan = new Scanner(System.in);
         
@@ -32,7 +31,7 @@ public class App {
             System.out.println();
             System.out.println();
             String guess = scan.nextLine();
-            if(!words.contains(guess)){
+            if(!dictionary.contains(guess)){
                 System.out.println("That word is not in the program's word list.");
             } else {
                 flag = checker.compareGuessAndWord(guess, word);

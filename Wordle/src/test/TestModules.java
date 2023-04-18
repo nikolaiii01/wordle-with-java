@@ -4,12 +4,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.lib.GuessChecker;
-import main.lib.WordList;
+import main.lib.Dictionary;
 
 public class TestModules {
 
     @Test
-    public void testCompareGuessAndWord() {
+    public void testCorrectGuess() {
         GuessChecker checker = new GuessChecker();
         String word = "haunt";
         String guess = "haunt";
@@ -21,7 +21,7 @@ public class TestModules {
     }
     
     @Test
-    public void testCompareGuessAndWord2() {
+    public void testIncorrectGuess() {
         GuessChecker checker = new GuessChecker();
         String word = "taunt";
         String guess = "tnwat";
@@ -35,16 +35,22 @@ public class TestModules {
 
     @Test
     public void testGetRandomWord() {
-        WordList wordList = new WordList();
-        String randomWord = wordList.getRandomWord();
+        Dictionary dictionary = new Dictionary();
+        String randomWord = dictionary.getRandomWord();
         assertNotNull(randomWord);
-        assertTrue(wordList.contains(randomWord));
+        assertTrue(dictionary.contains(randomWord));
     }
 
     @Test
-    public void testContains() {
-        WordList wordList = new WordList();
-        assertTrue(wordList.contains("ghost"));
-        assertFalse(wordList.contains("adieu"));
+    public void testDictionaryContainsGhost() {
+        Dictionary dictionary = new Dictionary();
+        assertTrue(dictionary.contains("ghost"));
+    }
+
+    @Test
+    //Another test for contains() method
+    public void testDictionaryDoesNotContainAdieu() {
+        Dictionary dictionary = new Dictionary();
+        assertFalse(dictionary.contains("adieu"));
     }
 }
