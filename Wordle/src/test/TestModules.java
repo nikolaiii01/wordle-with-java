@@ -116,20 +116,20 @@ public class TestModules {
     public void testWordIsUsedAsAGuessAlready() {
         Dictionary dictionary = new Dictionary();
         String[] guesses = new String[6];
-        guesses[0] = "haunt";
-        guesses[1] = "taunt";
+        guesses[0] = "arose";
+        guesses[1] = "crowd";
         guesses[2] = "stare";
         guesses[3] = "cloud";
         guesses[4] = "pinky";
-        assertTrue(dictionary.isWordGuessed("haunt", guesses));
+        assertTrue(dictionary.isWordGuessed("arose", guesses));
     }
 
     @Test
     public void testWordIsNotYetUsedAsAGuess() {
         Dictionary dictionary = new Dictionary();
         String[] guesses = new String[6];
-        guesses[0] = "haunt";
-        guesses[1] = "taunt";
+        guesses[0] = "claim";
+        guesses[1] = "ghost";
         guesses[2] = "stare";
         guesses[3] = "cloud";
         guesses[4] = "pinky";
