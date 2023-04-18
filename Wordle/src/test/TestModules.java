@@ -13,7 +13,7 @@ public class TestModules {
         GuessChecker checker = new GuessChecker();
         String word = "haunt";
         String guess = "haunt";
-        System.out.println("Unit test for compareGuessAndWord() #2");
+        System.out.println("Unit test for correct guess:");
         System.out.println("Word: " + word);
         System.out.println("Guess: " + guess);
         int flag = checker.compareGuessAndWord(guess, word);
@@ -25,7 +25,7 @@ public class TestModules {
         GuessChecker checker = new GuessChecker();
         String word = "taunt";
         String guess = "tnwat";
-        System.out.println("Unit test for compareGuessAndWord() #1");
+        System.out.println("Unit test for incorrect guess:");
         System.out.println("Word: " + word);
         System.out.println("Guess: " + guess);
         int flag = checker.compareGuessAndWord(guess, word);
