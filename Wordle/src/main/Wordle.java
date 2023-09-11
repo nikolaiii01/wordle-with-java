@@ -3,7 +3,7 @@ package main;
 import java.util.Arrays;
 import java.util.List;
 
-public class App {
+public class Wordle {
     static int flag = 0;
     public static void main(String[] args) {
         System.out.println("Welcome to WORDLE!");
